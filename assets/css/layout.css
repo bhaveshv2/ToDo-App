@@ -1,0 +1,111 @@
+body {
+  background-color: grey;
+  text-align: center; }
+  body #main-container {
+    background-color: white;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    height: 100%; }
+    body #main-container header {
+      opacity: 0.5;
+      padding-top: 2px; }
+    body #main-container hr {
+      margin: 0; }
+    body #main-container form {
+      width: 100%;
+      height: auto;
+      text-align: center; }
+    body #main-container #get-container {
+      height: 33%; }
+      body #main-container #get-container .input-heading {
+        text-align: left;
+        margin-left: 10px;
+        position: relative;
+        bottom: 20px; }
+      body #main-container #get-container #description-container {
+        width: 100%;
+        height: 30px; }
+        body #main-container #get-container #description-container #input {
+          position: relative;
+          bottom: 42px;
+          width: 100%;
+          color: black; }
+          body #main-container #get-container #description-container #input input {
+            width: 95%;
+            border: none;
+            height: 30px;
+            opacity: 0.5; }
+            body #main-container #get-container #description-container #input input:focus {
+              outline: none; }
+      body #main-container #get-container #category_duedate-container {
+        display: flex;
+        width: 100%;
+        height: 60px; }
+        body #main-container #get-container #category_duedate-container #category-container {
+          width: 50%; }
+          body #main-container #get-container #category_duedate-container #category-container #category-dropdown {
+            position: relative;
+            bottom: 40px;
+            width: 95%;
+            height: 30px;
+            border: none; }
+            body #main-container #get-container #category_duedate-container #category-container #category-dropdown:focus {
+              outline: none; }
+        body #main-container #get-container #category_duedate-container #duedate-container {
+          width: 50%; }
+          body #main-container #get-container #category_duedate-container #duedate-container #dd_input {
+            position: relative;
+            bottom: 42px;
+            width: 100%; }
+            body #main-container #get-container #category_duedate-container #duedate-container #dd_input input {
+              width: 95%;
+              border: none;
+              height: 30px;
+              opacity: 0.5; }
+              body #main-container #get-container #category_duedate-container #duedate-container #dd_input input:focus {
+                outline: none; }
+    body #main-container #button-container {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body #main-container #button-container .button {
+        width: 25%;
+        height: 50%; }
+      body #main-container #button-container input {
+        border: none;
+        height: 100%;
+        background: none;
+        color: white; }
+        body #main-container #button-container input:focus {
+          outline: none; }
+      body #main-container #button-container #submit-button {
+        display: flex;
+        justify-content: space-between;
+        background-color: #444;
+        margin-right: 10px; }
+        body #main-container #button-container #submit-button input {
+          width: 80%; }
+        body #main-container #button-container #submit-button:hover {
+          background-color: grey; }
+      body #main-container #button-container #delete-button {
+        display: flex;
+        justify-content: space-between;
+        background-color: #ED351D;
+        margin-left: 10px; }
+        body #main-container #button-container #delete-button input {
+          width: 80%; }
+        body #main-container #button-container #delete-button:hover {
+          background-color: #b12d1b; }
+      body #main-container #button-container i {
+        color: white;
+        width: 20%;
+        margin-top: 10%; }
+    body #main-container #list-container {
+      width: 50%;
+      position: relative;
+      left: 25%;
+      bottom: 10px; }
+      body #main-container #list-container #details-container {
+        display: flex; }

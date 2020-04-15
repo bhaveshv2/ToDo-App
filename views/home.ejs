@@ -1,0 +1,70 @@
+<div id="main-container">
+    <form action="/create" id="get-container" method="POST">
+        <header>
+            <h1>TODO  | App</h1>
+        </header>
+        <hr>
+        <div id="description-container">
+            <div class="input-heading">
+                <h6>DESCRIPTION</h6>
+            </div>
+            <div id="input">
+                <input type="text" name="description" placeholder="What do you need to do?" required>
+            </div>
+        </div>
+        <hr>
+        <div id="category_duedate-container">
+            <div id="category-container">
+                <div class="input-heading">
+                    <h6>CATEGORY</h6>
+                </div>
+                <select name="category" id="category-dropdown">
+                    <option value="none" selected disabled hidden>Choose a category</option>
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="others">others</option>
+                </select>
+            </div>
+            <div id="duedate-container">
+                <div class="input-heading">
+                    <h6>DUE DATE</h6>
+                </div>
+                <div id="dd_input">
+                    <input type="date" name="duedate" placeholder="dd/mm/yyyy" required>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="button-container">
+            <div id="submit-button" class="button">
+                <i class="fas fa-plus"></i>
+                <input type="submit" value="ADD TASK">
+            </div>
+            <div id="delete-button" class="button">
+                <i class="far fa-trash-alt"></i>
+                <input type="submit" value="DELETE TASKS">
+            </div>
+        </div>
+    </form>
+    <hr>
+    <div id="list-container">
+        <ul>
+            <% for(let i of list_todo){%>
+                <li id="details-container">
+                    <div id="checkbox">
+                        <input type="checkbox">
+                    </div>
+                    <div id="details">
+                        <p><%= i.description %></p>
+                        <p><%= i.duedate%></p>
+                    </div>
+                    <div id="category">
+                        <p><%= i.category %></p>
+                    </div>
+                </li>
+            <%}%>
+        </ul>
+    </div>
+</div>
