@@ -1,12 +1,11 @@
 body {
-  background-color: grey;
-  text-align: center; }
+  background-color: grey; }
   body #main-container {
     background-color: white;
     width: 50%;
     position: absolute;
     left: 25%;
-    height: 100%; }
+    height: auto; }
     body #main-container header {
       opacity: 0.5;
       padding-top: 2px; }
@@ -102,10 +101,20 @@ body {
         color: white;
         width: 20%;
         margin-top: 10%; }
-    body #main-container #list-container {
-      width: 50%;
-      position: relative;
-      left: 25%;
-      bottom: 10px; }
-      body #main-container #list-container #details-container {
-        display: flex; }
+    body #main-container #list-container #details-container {
+      display: flex;
+      width: 100%;
+      border-top: 1px solid lightgrey; }
+      body #main-container #list-container #details-container #checkbox {
+        width: 10%; }
+        body #main-container #list-container #details-container #checkbox input {
+          margin-left: 25px;
+          margin-top: 15px; }
+      body #main-container #list-container #details-container #details {
+        width: 50%; }
+        body #main-container #list-container #details-container #details #details-heading h5 {
+          margin: 5px; }
+        body #main-container #list-container #details-container #details #date-icon {
+          font-size: 0.7rem; }
+      body #main-container #list-container #details-container #category {
+        width: 40%; }

@@ -22,3 +22,14 @@ module.exports.createTodo = function(req,res){
         return res.redirect('/');
     });
 }
+
+module.exports.deleteTodo = function(req,res){
+    let id = req.query.id;
+
+    List.findByIdAndDelete(id,function(err){
+        if(err){
+            console.log('Error in Deleting an object from the database');
+        }
+        res.redirect('/');
+    });
+}

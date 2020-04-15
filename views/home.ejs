@@ -32,7 +32,7 @@
                     <h6>DUE DATE</h6>
                 </div>
                 <div id="dd_input">
-                    <input type="date" name="duedate" placeholder="dd/mm/yyyy" required>
+                    <input type="date" name="duedate" placeholder="dd/mm/yyyy">
                 </div>
             </div>
         </div>
@@ -44,27 +44,37 @@
             </div>
             <div id="delete-button" class="button">
                 <i class="far fa-trash-alt"></i>
-                <input type="submit" value="DELETE TASKS">
+                <% let i = list_todo %>
+                <a href="/delete/?id=<%=i._id%>"></a>
             </div>
         </div>
     </form>
-    <hr>
     <div id="list-container">
-        <ul>
             <% for(let i of list_todo){%>
-                <li id="details-container">
+                <div id="details-container">
                     <div id="checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" value="i._id">
                     </div>
                     <div id="details">
-                        <p><%= i.description %></p>
-                        <p><%= i.duedate%></p>
+                        <div id="details-heading">
+                            <h5><%= i.description %></h5>
+                        </div>
+                        <div id="date-icon">
+                            <i class="far fa-calendar-check"></i>
+                            <span>
+                                <% if(i.duedate){%>
+                                    <%= i.duedate%>
+                                <%} else{%>
+                                    No deadline
+                                <%}%>
+                            </span>
+                        </div>
                     </div>
                     <div id="category">
                         <p><%= i.category %></p>
                     </div>
-                </li>
+                </div>
             <%}%>
-        </ul>
     </div>
 </div>
+<script src="/js/script.js"></script>

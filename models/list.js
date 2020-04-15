@@ -11,8 +11,7 @@ const listSchema = new mongoose.Schema({
     },
 
     duedate:{
-        type: Date,
-        required:true,
+        type: {$dateToString: { format: "%Y-%m-%d", date: "$date" }},
     }
 });
 
