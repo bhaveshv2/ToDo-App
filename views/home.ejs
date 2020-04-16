@@ -24,7 +24,7 @@
                     <option value="work">Work</option>
                     <option value="school">School</option>
                     <option value="cleaning">Cleaning</option>
-                    <option value="others">others</option>
+                    <option value="others">Others</option>
                 </select>
             </div>
             <div id="duedate-container">
@@ -37,44 +37,54 @@
             </div>
         </div>
         <hr>
-        <div id="button-container">
+        <div class="button-container">
             <div id="submit-button" class="button">
                 <i class="fas fa-plus"></i>
-                <input type="submit" value="ADD TASK">
-            </div>
-            <div id="delete-button" class="button">
-                <i class="far fa-trash-alt"></i>
-                <% let i = list_todo %>
-                <a href="/delete/?id=<%=i._id%>"></a>
+                <button type="submit">ADD TASK</button>
             </div>
         </div>
     </form>
-    <div id="list-container">
-            <% for(let i of list_todo){%>
-                <div id="details-container">
-                    <div id="checkbox">
-                        <input type="checkbox" value="i._id">
+    <form method="get" action="/delete-tasks" id="list-container">
+        <div id="delete-button" class="button">
+            <i class="far fa-trash-alt"></i>
+            <button type="submit">DELETE TASKS</button>
+        </div>
+        <% for(let i of list_todo){%>
+            <div id="details-container">
+                <div id="checkbox">
+                    <input type="checkbox" name="<%= i._id %>" >
+                </div>
+                <div id="details">
+                    <div id="details-heading">
+                        <h5><%= i.description %></h5>
                     </div>
-                    <div id="details">
-                        <div id="details-heading">
-                            <h5><%= i.description %></h5>
-                        </div>
-                        <div id="date-icon">
-                            <i class="far fa-calendar-check"></i>
-                            <span>
-                                <% if(i.duedate){%>
-                                    <%= i.duedate%>
-                                <%} else{%>
-                                    No deadline
-                                <%}%>
-                            </span>
-                        </div>
-                    </div>
-                    <div id="category">
-                        <p><%= i.category %></p>
+                    <div id="date-icon">
+                        <i class="far fa-calendar-check"></i>
+                        <span>
+                            <% if(i.duedate){%>
+                                <%= i.duedate%>
+                            <%} else{%>
+                                No deadline
+                            <%}%>
+                        </span>
                     </div>
                 </div>
-            <%}%>
-    </div>
+                <div id="category">
+                        <% if(i.category == 'personal'){%>
+                            <p style="background-color: #406FBE;"><%= i.category %></p>
+                        <%}else if(i.category == 'work'){%>
+                            <p style="background-color: #9A2BAC;"><%= i.category %></p>
+                        <%}else if(i.category == 'school'){%>
+                            <p style="background-color: #F2A700;"><%= i.category %></p>
+                        <%}else if(i.category == 'cleaning'){%>
+                            <p style="background-color: orangered;"><%= i.category %></p>
+                        <%}else{%>
+                            <p><%= i.category %></p>
+                        <%}%>
+                </div>
+            </div>
+        <%}%>
+    </form>
 </div>
+
 <script src="/js/script.js"></script>

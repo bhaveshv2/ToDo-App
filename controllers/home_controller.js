@@ -24,12 +24,20 @@ module.exports.createTodo = function(req,res){
 }
 
 module.exports.deleteTodo = function(req,res){
-    let id = req.query.id;
-
-    List.findByIdAndDelete(id,function(err){
-        if(err){
-            console.log('Error in Deleting an object from the database');
-        }
-        res.redirect('/');
-    });
+    console.log(req.query);
+    var id=req.query;
+    for(key of Object.keys(id))
+    {
+        console.log(key);
+        List.findByIdAndDelete(key,function(err)
+        {
+            if(err)
+            {
+                console.log("Error in deleteing keys ",err);
+                return;
+            }
+        })
+    }
+    return res.redirect("back");
+    
 }
